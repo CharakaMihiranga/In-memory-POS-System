@@ -1,8 +1,4 @@
-body{
-  
-  font-family: sans-serif;
-  background-color: rgb(232, 236, 239);
-}
+
 .order-div{
 
   padding: 20px;
@@ -214,7 +210,7 @@ body{
     height: 4vh;
   }
 
-  .btn-sec{
+  .p-btn-sec{
     display: flex;
     justify-content: center;
     align-items: center;
