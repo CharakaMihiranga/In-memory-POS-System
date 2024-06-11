@@ -1,4 +1,5 @@
 
+
 .order-div{
 
   padding: 20px;
@@ -19,6 +20,16 @@
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+}
+
+ select{
+  font-size: 16px;
+  width: 90%;
+  height: 4.3vh;
+  border-radius: 4px;
+  padding-left: 2px;
+  border: 1px solid gray;
+  outline: none;
 }
 
 .i-header{
@@ -260,6 +271,17 @@
   color: #fff;
 }
 
+
+.btn-danger{
+  background-color: rgb(232, 48, 72);
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid rgb(232, 48, 72);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
  /* Responsive Codes  */
 
 @media screen and (max-width: 1260px) {
@@ -268,4 +290,26 @@
     grid-template-columns: 50% 50%;
   }
   
+}
+
+@media screen and (max-width: 768px) {
+ 
+  .order-div{
+    grid-template-columns: 90%;
+  }
+  
+  .purchase-form{
+    margin-bottom: 5%;
+  }
+
+  #additem-btn{
+    margin-left: 70%;
+    margin-bottom: 5%;
+  }
+
+  #btn-purchase{
+
+    margin-top: 5% ;
+    margin-bottom: 5%;
+  }
 }
