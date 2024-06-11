@@ -175,33 +175,37 @@
   
            <div>
             <p>Date:</p>
-            <input type="text" id="datepicker" placeholder="mm/dd/yyyy"></p>
+            <input type="text" id="order-date" placeholder="mm/dd/yyyy"></p>
            </div>
   
            <div>
             <p>Customer:</p>
-            <input type="text" id="datepicker" placeholder="mm/dd/yyyy"></p>
+        
+            <select id="customer-list" >
+              <option value="" disabled selected>Select Customer</option>
+              
+          </select>
            </div>
   
            <div>
             <p>Customer ID:</p>
-            <input type="text" id="datepicker" placeholder="mm/dd/yyyy"></p>
+            <input type="text" id="cus-id-order"></p>
            </div>
   
            <div>
             <p>Name:</p>
-            <input type="text" id="datepicker" placeholder="mm/dd/yyyy"></p>
+            <input type="text" id="cus-name-order"></p>
            </div>
   
            <div>
             <p>Salary:</p>
-            <input type="text" id="datepicker" placeholder="mm/dd/yyyy"></p>
+            <input type="text" id="cus-salary-order"></p>
            </div> 
         </div>
   
         <div id="input-address">
           <p>Address:</p>
-          <input type="text" id="datepicker"></p>
+          <input type="text" id="cus-address-order"></p>
          </div> 
   
         </form>
@@ -219,11 +223,14 @@
           <div class="f-row">
             <div>
               <p>Item:</p>
-              <input type="text" name="" id="item-ID" placeholder="Select Item Code">
+              <select id="item-list" >
+                <option value="" disabled selected>Select Item</option>
+                
+            </select>
             </div>
             <div>
               <p>Item Code:</p>
-              <input type="text" name="" id="item-code">
+              <input type="text" name="" id="item-code-order">
             </div>
           </div>
   
@@ -231,17 +238,17 @@
   
             <div>
               <p>Item Name:</p>
-              <input type="text" id="item-name">
+              <input type="text" id="item-name-order">
             </div>
   
             <div>
               <p>Price:</p>
-              <input type="text" id="item-price">
+              <input type="text" id="item-price-order">
             </div>
   
             <div>
               <p>QtyOnH:</p>
-              <input type="text" id="item-qty">
+              <input type="text" id="item-qty-order">
             </div>
           </div>
   
@@ -249,7 +256,7 @@
   
             <div>
               <p>Order Quantity:</p>
-              <input type="text">
+              <input type="text" id="ordered-qty">
             </div>
   
           </div>
@@ -264,27 +271,27 @@
       <form class="purchase-form">
         <div class="payment-detail">
           <p class="total">
-            Total : 00.0Rs/=
+           Total: <span id="total-order">0.00</span>
           </p>
           <p class="subtotal">
-            SubTotal : 00.0Rs/=
+            Sub Total: <span id="sub-total-order">0.00</span>
           </p>
         </div>
   
         <div class="cash-discount">
           <div>
             <p>Cash</p>
-            <input type="text">
+            <input type="text" id="paidAmount">
           </div>
           <div>
             <p>Discount</p>
-            <input type="text">
+            <input type="text" id="discount" >
           </div>
         </div>
   
         <div class="bal">
           <p>Balance</p>
-          <input type="text">
+          <input type="text" id="balance">
         </div>
   
         <div class="p-btn-sec">
@@ -302,10 +309,11 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
+            <th>Action</th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody id="cart-table-body">
 
         </tbody>
 
@@ -324,6 +332,9 @@
 
   <script type="module" src="controller/ItemController.js"></script>  
   <script type="module" src="dto/ItemDto.js"></script>  
+
+  <script type="module" src="controller/OrderController.js"></script>
+  
 
 </body>
 </html>
