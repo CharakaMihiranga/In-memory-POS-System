@@ -108,7 +108,7 @@ input[type="text"]:focus {
   border: 1px solid rgb(38, 173, 68);
 
 }
-#clear{
+#clear-item{
   background-color: rgb(220, 52, 69);
   border: 1px solid rgb(220, 52, 69);
   border-radius: 0px 4px 4px 0px;  
