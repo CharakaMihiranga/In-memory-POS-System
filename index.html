@@ -88,8 +88,9 @@
     </div>
       
 
-
   </section>
+
+
   <section class="item-sec" >
     
     <form class="form">
@@ -103,25 +104,25 @@
       <div class="input-field">
         <p>Item Code</p>
         <input type="text" name="" id="item-code">
-        <p class="error" id="item-c">Lorem ipsum dolor sit amet consectetur.</p>
+        <p class="error" id="itemCode-error"></p>
       </div>
      
       <div class="input-field">
         <p>Item Name</p>
         <input type="text" name="" id="item-name">
-        <p class="error" id="item-n"></p>
+        <p class="error" id="itemName-error"></p>
       </div>
      
       <div class="input-field">
         <p>Item Qty</p>
         <input type="text" name="" id="item-qty">
-        <p class="error" id="item-q"></p>
+        <p class="error" id="itemQty-error"></p>
       </div>
      
       <div class="input-field">
         <p>Unit Price</p>
         <input type="text" name="" id="unit-price">
-        <p class="error" id="unit-p"></p>
+        <p class="error" id="unitPrice-error"></p>
       </div>
      
 
@@ -133,7 +134,7 @@
         <button id="remove-item">Remove</button>
         <button id="update-item">Update</button>
         <button id="getall-item">Get All</button>
-        <button id="clear">Clear All</button>
+        <button id="clear-item">Clear All</button>
       </div>
     </form>
 
@@ -148,7 +149,7 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody id="item-table-body">
 
         </tbody>
 
@@ -156,9 +157,8 @@
       </table>
     </div>
       
-   
-
   </section>
+
   <section class="order-sec">
 
     <div class="order-div">
@@ -321,5 +321,9 @@
   <script type="module" src="controller/CustomerController.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
   <script type="module" src="dto/CustomerDto.js"></script>
+
+  <script type="module" src="controller/ItemController.js"></script>  
+  <script type="module" src="dto/ItemDto.js"></script>  
+
 </body>
 </html>

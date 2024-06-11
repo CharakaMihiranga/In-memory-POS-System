@@ -1,4 +1,4 @@
-import { customers,items } from '../db/DB.js';
+import { customers } from '../db/DB.js';
 import { CustomerDto } from '../dto/CustomerDto.js';
 
 

@@ -1,4 +1,5 @@
 import { CustomerDto } from "../dto/CustomerDto.js";
+import { ItemDto } from "../dto/ItemDto.js";
 
 export let customers = [
   new CustomerDto('C00-001', 'Sadun Malaka', 'No17, Panadura', 100.00),
@@ -6,19 +7,9 @@ export let customers = [
 ];
 
 export let items = [
-  {
-      itemCode : 'I001',
-      itemName : 'Biscuits',
-      itemQty : 50,
-      itemPrice : 110
-  },
-
-  {
-      itemCode : 'I002',
-      itemName : 'Chocolate',
-      itemQty : 24,
-      itemPrice : 55
-  }
+  new ItemDto('I00-001', 'Lux Soap', 100, 48),
+  new ItemDto('I00-002', 'Canned Mackerel ', 300, 150),
+  new ItemDto('I00-003', 'Anchor Milk Powder', 850, 340)
 ];
 
 export let orders = [];
