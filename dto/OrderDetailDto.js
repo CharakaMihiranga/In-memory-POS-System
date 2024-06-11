@@ -77,7 +77,7 @@ export class OrderDetailDto {
       this._totalPrice = value;
   }
 
-  // Optional: Add methods for validation or other logic as needed
+ 
   isValid() {
       let isValid = true;
       if (!this.orderId) {

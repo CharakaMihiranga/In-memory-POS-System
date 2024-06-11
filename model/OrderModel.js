@@ -15,3 +15,8 @@ export function saveOrder(order){
 function isOrderExist(orderId){
   return orders.some(order => order.orderId === orderId);
 }
+
+export function searchOrder(orderId){
+  return orders.find(order => order.orderId === orderId);
+
+}

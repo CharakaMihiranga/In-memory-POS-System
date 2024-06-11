@@ -12,16 +12,20 @@
 <body>
 
   <nav class="navbar">
-    <div class="sec-name">Customer Manage</div>
+    <div><p class="sec-name">POS System</p></div>
     <ul class="nav-links">
-      <li><a href="#" >Home</a></li>
-      <li><a href="#" >Customer</a></li>
-      <li><a href="#" >Item</a></li>
-      <li><a href="#" >Orders</a></li>
+      <li><a href="#HomePage" class="nav-link" >Home</a></li>
+      <li><a href="#CustomerManage" class="nav-link" >Customer</a></li>
+      <li><a href="#ItemManage" class="nav-link" >Item</a></li>
+      <li><a href="#OrderManage" class="nav-link" >Orders</a></li>
     </ul>
   </nav>
 
-  <section class="customer-sec" >
+  <section id="HomePage">
+    
+  </section>
+
+  <section class="customer-sec" id="CustomerManage"  style="display: none;">
     
     <form class="form">
 
@@ -91,7 +95,7 @@
   </section>
 
 
-  <section class="item-sec" >
+  <section class="item-sec" id="ItemManage" style="display: none;" >
     
     <form class="form">
 
@@ -159,7 +163,7 @@
       
   </section>
 
-  <section class="order-sec">
+  <section class="order-sec" id="OrderManage" style="display: none;">
 
     <div class="order-div">
       <form class="invoice-detail">
@@ -324,10 +328,12 @@
 
   </section>
 
-
-
-  <script type="module" src="controller/CustomerController.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+
+  <script type="module" src="controller/IndexController.js"></script>
+  
+  <script type="module" src="controller/CustomerController.js"></script>
+  
   <script type="module" src="dto/CustomerDto.js"></script>
 
   <script type="module" src="controller/ItemController.js"></script>  
