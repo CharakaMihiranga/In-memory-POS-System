@@ -31,7 +31,7 @@ document.getElementById('cus-table-body').addEventListener('click', function(eve
 
 function loadAllCustomers(){
 
-  
+  clearTable();
 
   let customers = getAllCustomers();
   customers.forEach(
@@ -43,18 +43,21 @@ function loadAllCustomers(){
 
 
 function reloadTable( customer ){
-  let tableBody = document.getElementById('cus-table-body');
-  let newRow = tableBody.insertRow();
 
-  let cellId = newRow.insertCell(0);
-  let cellName = newRow.insertCell(1);
-  let cellAddress = newRow.insertCell(2);
-  let cellSalary = newRow.insertCell(3);
-
-  cellId.textContent = customer._id;
-  cellName.textContent = customer._name;
-  cellAddress.textContent = customer._address;
-  cellSalary.textContent = customer._salary;
+  if (customer !== null && customer !== undefined && customer instanceof CustomerDto && customer._id !== null && customer._id !== undefined) {
+    let tableBody = document.getElementById('cus-table-body');
+    let newRow = tableBody.insertRow();
+  
+    let cellId = newRow.insertCell(0);
+    let cellName = newRow.insertCell(1);
+    let cellAddress = newRow.insertCell(2);
+    let cellSalary = newRow.insertCell(3);
+  
+    cellId.textContent = customer._id;
+    cellName.textContent = customer._name;
+    cellAddress.textContent = customer._address;
+    cellSalary.textContent = customer._salary;
+  }
 
 }
 
@@ -79,15 +82,25 @@ function addCustomer(){
     salary
   );
 
-  try{
-    AddCustomer(customer);
-    clearTable();
-    clearFields();
-    loadAllCustomers();
-    generateNextCustomerID();
-  } catch(error) {
-    console.log(error)
-  }
+    try{
+      if(!isCustomerExist(id)){
+        if(confirm("Are you sure you want to add this customer?")){
+          AddCustomer(customer);
+          clearTable();
+          clearFields();
+          loadAllCustomers();
+          generateNextCustomerID();
+          alert('Customer Added Successfully!');
+      }else{
+      
+      }
+    }else{
+      alert("Customer already exist!");
+    }  
+      
+    } catch(error) {
+      throw new Error(error);
+    }
 }
 
 function removeCustomer(){
@@ -95,18 +108,22 @@ function removeCustomer(){
   event.preventDefault();
   const id = document.getElementById('cus-ID').value;
 
-  try{
-    if(isCustomerExist(id)){
-      RemoveCustomer(id);
-      clearTable();
-      clearFields();
-      loadAllCustomers();
-    }else {
-      alert("Coudn't find customer!");
+ 
+    try{
+      if(isCustomerExist(id)){
+        if(confirm("Are you sure you want to delete this customer?")){
+        RemoveCustomer(id);
+        clearTable();
+        clearFields();
+        loadAllCustomers();
+        }
+      }else {
+        alert("Coudn't find customer!");
+      }
+    }catch(error){
+     throw new Error(error);
     }
-  }catch(error){
-    console.log(error);
-  }
+
  
 }
 
@@ -129,15 +146,17 @@ function updateCustomer(){
 
   try{
     if(isCustomerExist(id)){
+      if(confirm("Are you sure you want to update this customer?")){
       UpdateCustomer(updatedCustomer);
       clearTable();
       clearFields();
       loadAllCustomers();
+      }
     }else{
       alert("Coudn't find customer!");
     }
   } catch(error) {
-    console.log(error);
+    throw new Error(error);
   }
 }
 
@@ -161,6 +180,11 @@ function clearFields(){
   document.getElementById('cus-name').value = "";
   document.getElementById('cus-address').value = "";
   document.getElementById('cus-salary').value = "";
+
+  const errorTags = document.querySelectorAll('p.error');
+  errorTags.forEach(tag => tag.textContent = '');
+
+  generateNextCustomerID();
 }
 
 function clearTable(){

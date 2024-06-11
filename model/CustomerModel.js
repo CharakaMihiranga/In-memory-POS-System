@@ -9,8 +9,10 @@ export function getAllCustomers(){
 
 export function AddCustomer(customer){
 
-  if (customer instanceof CustomerDto){
-    customers.push(customer);
+  if (customer instanceof CustomerDto && customer.id !== null && customer.id !== '' && customer.name !== null && customer.name !== '' && customer.address !== null && customer.address !== '' && customer.salary !== null && customer.salary !== '' && !isNaN(customer.salary) && customer.salary > 0){
+
+      customers.push(customer);
+     
   } else {
     throw new Error ('Invalid Customer');
   }
@@ -32,6 +34,7 @@ export function UpdateCustomer(updateCustomer){
   const index = customers.findIndex(customer => customer.id === updateCustomer.id);
   if (index !== -1) {
     customers[index] = updateCustomer;
+    alert('Customer Updated Successfully!');
   } else {
     throw new Error('Customer not found');
   }
