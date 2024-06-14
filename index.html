@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style/customer-sec.css">
   <link rel="stylesheet" href="style/item-sec.css">
   <link rel="stylesheet" href="style/place-order.css">
+  <link rel="stylesheet" href="style/home-sec.css">
   <title>POS System</title>
 </head>
 <body>
@@ -18,12 +19,52 @@
       <li><a href="#CustomerManage" class="nav-link" >Customer</a></li>
       <li><a href="#ItemManage" class="nav-link" >Item</a></li>
       <li><a href="#OrderManage" class="nav-link" >Orders</a></li>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     </ul>
   </nav>
 
   <section id="HomePage">
+
+    <div class="cards-container">
+      <a href="#">
+        <div class="card">
+          <i class="fas fa-user card-icon"></i>
+          <div class="card-content">
+            <p class="count" id="total-customers"></p>
+            <h3 class="card-header">Customer</h3>
+           
+          </div>
+      </a>
+      
+       
+      </div>
     
+      <a href="">
+        <div class="card">
+          <i class="fas fa-box card-icon"></i>
+          <div class="card-content">
+           <p class="count" id="total-items"></p>
+            <h3 class="card-header">Item</h3>
+          </div>
+       
+        </div>
+      </a>
+    
+      <a href="">
+        <div class="card">
+          <i class="fas fa-shopping-cart card-icon"></i>
+          <div class="card-content">
+            <p class="count"id="total-orders"></p>
+            <h3 class="card-header">Place Order</h3>
+          </div>
+         
+        </div>
+      </a>
+  
+    </div>
+
   </section>
+  
 
   <section class="customer-sec" id="CustomerManage"  style="display: none;">
     
@@ -289,7 +330,7 @@
           </div>
           <div>
             <p>Discount</p>
-            <input type="text" id="discount" >
+            <input type="text" id="discount" placeholder="10%" >
           </div>
         </div>
   
@@ -327,6 +368,10 @@
     
 
   </section>
+
+  <footer>
+    <p>Developed By : Charaka Mihiranga</p>
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
 

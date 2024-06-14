@@ -20,3 +20,16 @@ export function searchOrder(orderId){
   return orders.find(order => order.orderId === orderId);
 
 }
+
+export function updateItemQuantity(orderDetail){
+  const order = searchOrder(orderDetail.orderId);
+  if(order){
+    const item = order.orderDetails.find(orderDetail => orderDetail.itemCode === orderDetail.itemCode);
+    if(item){
+      item.qty = orderDetail.qty;
+      return true;
+    }
+  }
+  return false;
+}
+

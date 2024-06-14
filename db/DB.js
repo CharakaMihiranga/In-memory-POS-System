@@ -4,8 +4,8 @@ import { OrderDto } from "../dto/OrderDto.js";
 import { OrderDetailDto } from "../dto/OrderDetailDto.js";
 
 export let customers = [
-  new CustomerDto('C00-001', 'Sadun Malaka', 'No17, Panadura', 100.00),
-  new CustomerDto('C00-002', 'Ramal Wasuka', 'Panadura', 200.00)
+  new CustomerDto('C00-001', 'Sadun Malaka', 'No17, Panadura', 10000.00),
+  new CustomerDto('C00-002', 'Ramal Wasuka', 'Panadura', 20000.00)
 ];
 
 export let items = [

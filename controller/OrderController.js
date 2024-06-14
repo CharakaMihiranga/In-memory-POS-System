@@ -1,6 +1,6 @@
 import { OrderDto } from "../dto/OrderDto.js";
 import { OrderDetailDto } from "../dto/OrderDetailDto.js";
-import { getAllOrders,saveOrder,searchOrder} from "../model/OrderModel.js";
+import { getAllOrders,saveOrder,searchOrder,updateItemQuantity} from "../model/OrderModel.js";
 import {getAllCustomers} from "../model/CustomerModel.js";
 import {getAllItems} from "../model/ItemModel.js";
 
@@ -121,6 +121,8 @@ function btnPurchaseOnAction(){
       alert('Order has been saved successfully!');
       clearFields();
       generateNextOrderId();
+      setDate();
+      updateItemQuantity(order._orderDetails);
     }
 
     }else{
@@ -129,7 +131,8 @@ function btnPurchaseOnAction(){
 }
 
 
-function generateNextOrderId() {
+
+export function generateNextOrderId() {
   let orders = getAllOrders();
   let lastOrder = orders[orders.length - 1];
   let lastID = lastOrder ? lastOrder._orderId : "O00-000";
@@ -340,7 +343,7 @@ function clearItemFields(){
   document.getElementById('ordered-qty').value = '';
 }
 
-function clearFields(){
+export function clearFields(){
   document.getElementById('order-id').value = '';
   document.getElementById('order-date').value = '';
   document.getElementById('cus-id-order').value = '';

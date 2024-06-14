@@ -27,7 +27,7 @@ document.getElementById('item-table-body').addEventListener('click', function(ev
   }
 });
 
-function loadAllItems() {
+export function loadAllItems() {
   clearItemTable();
   let items = getAllItems();
   items.forEach(item => {

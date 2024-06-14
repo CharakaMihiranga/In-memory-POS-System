@@ -43,7 +43,7 @@ export class CustomerDto {
         $('#cusAddress-error').text("");
     }
 
-    if (salary === null || salary === '' || isNaN(salary) || salary <= 0 || salary.length < 3 || salary.length > 6){
+    if (salary === null || salary === '' || isNaN(salary) || salary <= 0 || salary < 1000 || salary > 1000000){
       $('#cusSalary-error').text("Please enter a valid Customer Salary");
       isValid = false;
     } else {

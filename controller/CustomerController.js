@@ -91,15 +91,13 @@ function addCustomer(){
           loadAllCustomers();
           generateNextCustomerID();
           alert('Customer Added Successfully!');
-      }else{
-      
       }
     }else{
       alert("Customer already exist!");
     }  
       
     } catch(error) {
-      throw new Error(error);
+      throw new Error(error); 
     }
 }
 
