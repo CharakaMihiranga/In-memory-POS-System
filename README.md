@@ -73,6 +73,7 @@ To run the POS system locally:
 
 Here are some screenshots of the POS System :
 
+![Screenshot 2024-06-14 154551](https://github.com/CharakaMihiranga/In-memory-POS-System/assets/143955766/565e0414-a60a-436e-b614-dc68d1f2b386)
 ![Screenshot 2024-06-14 135125](https://github.com/CharakaMihiranga/In-memory-POS-System/assets/143955766/04f728e4-feba-4bbc-9c50-a33c63184a81)
 ![Screenshot 2024-06-14 134723](https://github.com/CharakaMihiranga/In-memory-POS-System/assets/143955766/ebee0c08-9767-4c3d-98d6-11e6e6eaf17e)
 ![Screenshot 2024-06-14 134739](https://github.com/CharakaMihiranga/In-memory-POS-System/assets/143955766/fceb1823-6556-4b46-b781-7e4887d06b0f)
