@@ -4,7 +4,7 @@ import { getAllOrders,saveOrder,searchOrder,updateItemQuantity} from "../model/O
 import {getAllCustomers} from "../model/CustomerModel.js";
 import {getAllItems} from "../model/ItemModel.js";
 
-export {setCustomerList,setItemList};
+export {setCustomerList,setItemList,setDate};
 
 generateNextOrderId();
 setDate();

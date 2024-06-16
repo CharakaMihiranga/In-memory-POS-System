@@ -1,4 +1,4 @@
-import {setCustomerList, setItemList , generateNextOrderId ,clearFields} from './OrderController.js';
+import {setCustomerList, setItemList , generateNextOrderId ,clearFields,setDate} from './OrderController.js';
 import {loadAllItems} from './ItemController.js';
 
 import { getAllCustomers } from '../model/CustomerModel.js';
@@ -45,7 +45,7 @@ $(document).ready(function() {
         setCustomerList();
         setItemList();
         generateNextOrderId();
-
+        setDate();
         break;
       default:
         $('.sec-name').text('POS System');
